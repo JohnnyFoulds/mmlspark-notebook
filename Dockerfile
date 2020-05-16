@@ -30,5 +30,10 @@ RUN echo "Installing PySpark" && \
 COPY init_notebook.py /home/$NB_USER/.ipython/profile_default/startup/
 RUN chown -R $NB_USER /home/$NB_USER/.ipython
 
+# Load the MMLSpark dependencies
+USER $NB_USER
+RUN echo "Initialize MMLSpark" && \
+    ipython -i my_commands.py
+
 # Copy sample notebooks
 COPY notebooks notebooks
