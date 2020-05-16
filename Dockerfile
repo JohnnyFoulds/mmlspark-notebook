@@ -8,14 +8,14 @@ LABEL maintainer="Johnny Foulds <hfoulds@gmail.com>"
 USER root
 
 # Configure environment variables
-ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
+ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" \
     SPARK_VERSION=2.4.3 \
     MMLSPARK_VERSION=1.0.0-rc1
 
 # Install JRE
 RUN echo "Installing JRE" && \
     apt-get -y update && \
-    apt-get install -y --no-install-recommends openjdk-8-jre-headless && \
+    apt-get install -y --no-install-recommends default-jre && \
     apt-get -qq -y autoremove && \
     apt-get autoclean && \    
     rm -rf /var/lib/apt/lists/* /var/log/dpkg.log 
