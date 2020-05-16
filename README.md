@@ -20,7 +20,7 @@ $ docker run --name mmlspark-notebook -p 8888:8888 foulds/mmlspark-notebook:0.1 
 - Lessons from Building a SparkML Compatible Machine Learning Library - https://www.youtube.com/watch?v=cEltmvfx51A
 - MMLSpark Docker Demo - https://github.com/Azure/mmlspark/blob/master/tools/docker/demo/init_notebook.py
 
-## MMLSpar Samples
+## MMLSpark Samples
 - Sample Notebooks - https://github.com/Azure/mmlspark/tree/master/notebooks/samples
 - Classification - Twitter Sentiment with Vowpal Wabbi - https://github.com/Azure/mmlspark/blob/master/notebooks/samples/Classification%20-%20Twitter%20Sentiment%20with%20Vowpal%20Wabbit.ipynb
 
