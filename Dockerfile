@@ -15,7 +15,7 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
 # Install JRE
 RUN echo "Installing JRE" && \
     apt-get -y update && \
-    apt-get install default-jre && \
+    apt-get install -y --no-install-recommends default-jre && \
     apt-get -qq -y autoremove && \
     apt-get autoclean && \    
     rm -rf /var/lib/apt/lists/* /var/log/dpkg.log 
