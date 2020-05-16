@@ -10,7 +10,7 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
     MMLSPARK_VERSION=1.0.0-rc1
 
 # Install PySpark
-RUN echo "Installing PySpark" \
+RUN echo "Installing PySpark" && \
     conda install pyspark=${SPARK_VERSION}
 
 # Set the IPython Startup Script
