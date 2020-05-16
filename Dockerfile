@@ -27,7 +27,8 @@ RUN echo "Installing PySpark" && \
     conda clean --all --yes
 
 # Set the IPython Startup Script
-COPY init_notebook.py /home/jovyan/.ipython/profile_default/startup
+COPY init_notebook.py /home/$NB_USER/.ipython/profile_default/startup
+RUN chown -R $NB_USER /home/$NB_USER/.ipython
 
 # Copy sample notebooks
 COPY notebooks notebooks
