@@ -33,7 +33,7 @@ RUN chown -R $NB_USER /home/$NB_USER/.ipython
 # Load the MMLSpark dependencies
 USER $NB_USER
 RUN echo "Initialize MMLSpark" && \
-    ipython -i my_commands.py
+    python /home/$NB_USER/.ipython/profile_default/startup/init_notebook.py
 
 # Copy sample notebooks
 COPY notebooks notebooks
