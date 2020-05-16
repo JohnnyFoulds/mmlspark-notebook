@@ -11,6 +11,7 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
 
 # Install PySpark
 RUN echo "Installing PySpark" && \
+    conda update -n base conda && \
     conda install pyspark=${SPARK_VERSION}
 
 # Set the IPython Startup Script
