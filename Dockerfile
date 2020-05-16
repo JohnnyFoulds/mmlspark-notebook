@@ -9,12 +9,22 @@ ENV JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk-amd64" \
     SPARK_VERSION=2.4.3 \
     MMLSPARK_VERSION=1.0.0-rc1
 
+# Install JRE
+RUN echo "Installing JRE" && \
+    apt-get -y update && \
+    apt-get install default-jre && \
+    apt-get -qq -y autoremove && \
+    apt-get autoclean && \    
+    rm -rf /var/lib/apt/lists/* /var/log/dpkg.log 
+
+
 # Install PySpark
 RUN echo "Installing PySpark" && \
-    conda install pyspark=${SPARK_VERSION}
+    conda install pyspark=${SPARK_VERSION} && \
+    conda clean --all --yes
 
 # Set the IPython Startup Script
-COPY init_notebook.py /root/.ipython/profile_default/startup
+COPY init_notebook.py /home/jovyan/.ipython/profile_default/startup
 
 # Copy sample notebooks
 COPY notebooks notebooks

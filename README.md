@@ -10,6 +10,7 @@ Main purpose is to add Microsoft Machine Learning for Apache Spark to the Jupyte
 
 ## Jupyter
 - Docker Hub: jupyter/datascience-notebook - https://hub.docker.com/r/jupyter/datascience-notebook
+- Jupyter Base Dockerfile - https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile
 - Jupyter Docker Common Features - https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html
 - sudo password for jovyan - https://github.com/jupyter/docker-stacks/issues/408
 - jovyan user cannot sudo in terminal - https://github.com/kubeflow/kubeflow/issues/425
