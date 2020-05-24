@@ -35,11 +35,13 @@ RUN echo "Installing sshd" && \
 RUN echo "Configuring sshd" && \
     echo 'root:root' | chpasswd && \
     sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication no/g" /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
 # Configuring the ssh keys
+COPY authorized_keys /root/.ssh/authorized_keys
 RUN echo "Configuring ssh keys" && \
-    mkdir /root/.ssh
+    chown root:root /root/.ssh/authorized_keys
 
 EXPOSE 22
 
