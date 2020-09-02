@@ -1,5 +1,6 @@
 # docker build . -t foulds/ssh-proxy:0.1
 # docker run -d --rm --name ssh-proxy -p 4040:22 foulds/ssh-proxy:0.1 /root/start.sh
+# ssh -p 12923 -D 1337 -q -C -N root@197.95.152.171
 #
 # Web References
 #  - https://hub.docker.com/r/rastasheep/ubuntu-sshd
